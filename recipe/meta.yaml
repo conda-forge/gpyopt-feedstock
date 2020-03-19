@@ -1,18 +1,18 @@
 {% set name = "GPyOpt" %}
-{% set version = "1.2.5" %}
+{% set version = "1.2.6" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: f92276dd47dc5129ca3e83f6604e4f902a845bbd3226d9c2c6a2f6b942973a18
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: e714daa035bb529a6db23c53665a762a4ab3456b9329c19ad3b03983f94c9b2a
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -41,11 +41,11 @@ test:
     - GPyOpt.util
 
 about:
-  home: "http://sheffieldml.github.io/GPyOpt/"
+  home: http://sheffieldml.github.io/GPyOpt/
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: "The Bayesian Optimization Toolbox"
+  summary: The Bayesian Optimization Toolbox
   dev_url: https://github.com/SheffieldML/GPyOpt
 
 extra:
